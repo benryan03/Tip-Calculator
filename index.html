@@ -1,44 +1,51 @@
 <html>
 <head>
-    <title>
-        Tip Calculator
-    </title>
+  <title>
+      Tip Calculator
+  </title>
+
+  <link rel="stylesheet" type="text/css" href="default.css">
+
+  <script type="text/javascript">
+    function myFunction(){
+        var bill = document.getElementById("bill").value;
+        var tip_percentage = document.getElementById("tip_percentage").value;
+        var result = Math.round((bill * tip_percentage)*100) / 100;
+        document.getElementById("result").innerHTML = "Tip: $" + result;
+    } 
+  </script>
+
 </head>
 
 <body>
 
-    <h1>
-        <center>Tip calculator</center>
-    </h1>
+  <center>
+    <table border=0><tr><td>
+      <center>
 
-    <center>
+      <h1>
+        Tip calculator
+      </h1>
 
-        <label for="bill">Bill:</label>
-        <input type="number" id="bill" name="bill"><br><br>
+      <label for="bill">Bill: $</label>
+      <input type="number" id="bill" name="bill"><br><br>
 
-        <label w = 100 for="tip_percentage">Tip percentage:</label>
-        <select id="tip_percentage">
-          <option value=".15">.15</option>
-          <option value=".20">.20</option>
-          <option value=".25">.25</option> 
-        </select><br><br>
+      <label w = 100 for="tip_percentage">Tip percentage:</label>
+      <select id="tip_percentage">
+        <option value=".15">.15</option>
+        <option value=".20">.20</option>
+        <option value=".25">.25</option> 
+      </select><br><br>
 
-        <input type="button" onclick="myFunction()" value="Submit"><br><br>
+      <input type="button" onclick="myFunction()" value="Submit"><br><br>
 
       <p id="result">
         Result: 
       </p>
 
       </center>
+    </td></tr></table>
+  </center>
 
-      <script type="text/javascript">
-        function myFunction(){
-            var bill = document.getElementById("bill").value;
-            var tip_percentage = document.getElementById("tip_percentage").value;
-            var result = Math.round((bill * tip_percentage)*100) / 100;
-            document.getElementById("result").innerHTML = "Result: " + result;
-        } 
-    </script>
-      
 </body>
 </html>
