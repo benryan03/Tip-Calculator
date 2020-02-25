@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>
+        Tip Calculator
+    </title>
+</head>
+
+<body>
+
+    <h1>
+        <center>Tip calculator</center>
+    </h1>
+
+    <center>
+
+        <label for="bill">Bill:</label>
+        <input type="number" id="bill" name="bill"><br><br>
+
+        <label w = 100 for="tip_percentage">Tip percentage:</label>
+        <select id="tip_percentage">
+          <option value=".15">.15</option>
+          <option value=".20">.20</option>
+          <option value=".25">.25</option> 
+        </select><br><br>
+
+        <input type="button" onclick="myFunction()" value="Submit"><br><br>
+
+      <p id="result">
+        Result: 
+      </p>
+
+      </center>
+
+      <script type="text/javascript">
+        function myFunction(){
+            var bill = document.getElementById("bill").value;
+            var tip_percentage = document.getElementById("tip_percentage").value;
+            var result = Math.round((bill * tip_percentage)*100) / 100;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        } 
+    </script>
+      
+</body>
+</html>
